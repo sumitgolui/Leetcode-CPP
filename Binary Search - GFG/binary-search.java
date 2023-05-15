@@ -31,15 +31,18 @@ import java.util.*;
 class Solution {
     int binarysearch(int arr[], int n, int k) {
         // code here
-        for(int i=0;i<n;i++){
-            if(arr[i]!=k)
-            continue;
-            else{
-            return i;
-            //break;
-            }
+        int s=0;
+        int e=n-1;
+        while(s<=e){
+            int mid=(s+e)/2;
+            
+            if(k>arr[mid])
+                s=mid+1;
+            if(k<arr[mid])
+                e=mid-1;
+            if(k==arr[mid])
+                return mid;
         }
         return -1;
-        
     }
 }
